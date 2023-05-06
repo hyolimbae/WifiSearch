@@ -2,6 +2,9 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
 <head>
+  <meta charset="UTF-8">
+
+
   <style>
 
     table {
@@ -41,6 +44,7 @@
 <body>
 
 <script>
+
   /* 현재 유저 위치 구하기 */
   function getUserLocation()
   {
@@ -116,23 +120,23 @@
   <td>${dto.x_SWIFI_WRDOFC}</td>
   <td>
     <form action="/detail" method="post">
-      <input type="hidden" id="distance" name="id" value="${dto.distance}">
-      <input type="hidden" id="x_SWIFI_MGR_NO" name="id" value="${dto.x_SWIFI_MGR_NO}">
-      <input type="hidden" id="x_SWIFI_WRDOFC" name="id" value="${dto.x_SWIFI_WRDOFC}">
-      <input type="hidden" id="x_SWIFI_MAIN_NM" name="id" value="${dto.x_SWIFI_MAIN_NM}">
-      <input type="hidden" id="x_SWIFI_ADRES1" name="id" value="${dto.x_SWIFI_ADRES1}">
-      <input type="hidden" id="x_SWIFI_ADRES2" name="id" value="${dto.x_SWIFI_ADRES2}">
-      <input type="hidden" id="x_SWIFI_INSTL_FLOOR" name="id" value="${dto.x_SWIFI_INSTL_FLOOR}">
-      <input type="hidden" id="x_SWIFI_INSTL_TY" name="id" value="${dto.x_SWIFI_INSTL_TY}">
-      <input type="hidden" id="x_SWIFI_INSTL_MBY" name="id" value="${dto.x_SWIFI_INSTL_MBY}">
-      <input type="hidden" id="x_SWIFI_SVC_SE" name="id" value="${dto.x_SWIFI_SVC_SE}">
-      <input type="hidden" id="x_SWIFI_CMCWR" name="id" value="${dto.x_SWIFI_CMCWR}">
-      <input type="hidden" id="x_SWIFI_CNSTC_YEAR" name="id" value="${dto.x_SWIFI_CNSTC_YEAR}">
-      <input type="hidden" id="x_SWIFI_INOUT_DOOR" name="id" value="${dto.x_SWIFI_INOUT_DOOR}">
-      <input type="hidden" id="x_SWIFI_REMARS3" name="id" value="${dto.x_SWIFI_REMARS3}">
-      <input type="hidden" id="lat" name="id" value="${dto.lat}">
-      <input type="hidden" id="lnt" name="id" value="${dto.lnt}">
-      <input type="hidden" id="work_DTTM" name="id" value="${dto.work_DTTM}">
+      <input type="hidden" id="distance" name="distance" value="${dto.distance}">
+      <input type="hidden" id="x_SWIFI_MGR_NO" name="x_SWIFI_MGR_NO" value="${dto.x_SWIFI_MGR_NO}">
+      <input type="hidden" id="x_SWIFI_WRDOFC" name="x_SWIFI_WRDOFC" value="${dto.x_SWIFI_WRDOFC}">
+      <input type="hidden" id="x_SWIFI_MAIN_NM" name="x_SWIFI_MAIN_NM" value="${dto.x_SWIFI_MAIN_NM}">
+      <input type="hidden" id="x_SWIFI_ADRES1" name="x_SWIFI_ADRES1" value="${dto.x_SWIFI_ADRES1}">
+      <input type="hidden" id="x_SWIFI_ADRES2" name="x_SWIFI_ADRES2" value="${dto.x_SWIFI_ADRES2}">
+      <input type="hidden" id="x_SWIFI_INSTL_FLOOR" name="x_SWIFI_INSTL_FLOOR" value="${dto.x_SWIFI_INSTL_FLOOR}">
+      <input type="hidden" id="x_SWIFI_INSTL_TY" name="x_SWIFI_INSTL_TY" value="${dto.x_SWIFI_INSTL_TY}">
+      <input type="hidden" id="x_SWIFI_INSTL_MBY" name="x_SWIFI_INSTL_MBY" value="${dto.x_SWIFI_INSTL_MBY}">
+      <input type="hidden" id="x_SWIFI_SVC_SE" name="x_SWIFI_SVC_SE" value="${dto.x_SWIFI_SVC_SE}">
+      <input type="hidden" id="x_SWIFI_CMCWR" name="x_SWIFI_CMCWR" value="${dto.x_SWIFI_CMCWR}">
+      <input type="hidden" id="x_SWIFI_CNSTC_YEAR" name="x_SWIFI_CNSTC_YEAR" value="${dto.x_SWIFI_CNSTC_YEAR}">
+      <input type="hidden" id="x_SWIFI_INOUT_DOOR" name="x_SWIFI_INOUT_DOOR" value="${dto.x_SWIFI_INOUT_DOOR}">
+      <input type="hidden" id="x_SWIFI_REMARS3" name="x_SWIFI_REMARS3" value="${dto.x_SWIFI_REMARS3}">
+      <input type="hidden" id="lat" name="lat" value="${dto.lat}">
+      <input type="hidden" id="lnt" name="lnt" value="${dto.lnt}">
+      <input type="hidden" id="work_DTTM" name="work_DTTM" value="${dto.work_DTTM}">
       <button type="submit" name= ${dto.x_SWIFI_MAIN_NM} value=${dto.x_SWIFI_MAIN_NM} class="btn-link">${dto.x_SWIFI_MAIN_NM}</button>
     </form>
   </td>
