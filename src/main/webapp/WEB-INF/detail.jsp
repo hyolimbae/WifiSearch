@@ -44,18 +44,20 @@
 <label>|</label>
 <a href="/load" >Open API 와이파이 정보 가져오기</a>
 <label>|</label>
-<a href="/bookmark" >북마크 보기</a>
+<a href="/bookmarkList" >북마크 보기</a>
 <label>|</label>
 <a href="/manage" >북마크 그룹 관리</a>
 
-<form action="/bookmarkGroup">
-    <select name="bookmarks" id="bookmark">
-    <c:forEach items = "${bookmarklist}" var = "bookmarkdto">
+<form action="/bookmarkSave" method="post">
+    <input type="hidden" id="id" name="id" value="${bookmarkdto.id}">
+    <input type="hidden" id="wifiName" name="wifiName" value="${dto.x_SWIFI_MAIN_NM}">
+    <select name="bookmarkName" id="bookmark">
+    <c:forEach items = "${bookmarkList}" var = "bookmarkdto">
     <option> ${bookmarkdto.name} </option>
-    </select>
     </c:forEach>
+    </select>
 
-    <input type="submit" value="북마크 추가하기"/>
+    <input type="submit" value="북마크 추가하기" onclick="alert('북마크가 수정되었습니다')"/>
 </form>
 
 <div>

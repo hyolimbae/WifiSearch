@@ -15,4 +15,6 @@ public class BookmarkDTO
     private long priority;
     private LocalDateTime registerTime;
     private LocalDateTime modifiedTime;
+    private LocalDateTime wifiRegisteredTime;
+    private String wifiName;
 }

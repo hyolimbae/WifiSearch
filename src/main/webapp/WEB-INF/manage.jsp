@@ -38,7 +38,7 @@
 <label>|</label>
 <a href="/load" >Open API 와이파이 정보 가져오기</a>
 <label>|</label>
-<a href="/bookmark" >북마크 보기</a>
+<a href="/bookmarkList" >북마크 보기</a>
 <label>|</label>
 <a href="/manage" >북마크 그룹 관리</a>
 
@@ -68,12 +68,12 @@
                 <td>${dto.registerTime}</td>
                 <td>${dto.modifiedTime}</td>
                 <td>
-                    <form action="/bookmarkModify" method="post">
-                        <input type="hidden" id="id_Modification" name="id_Modification" value="${dto.name}">
+                    <form action="/bookmarkGroupModify" method="post">
+                        <input type="hidden" id="id_Modification" name="id_Modification" value="${dto.id}">
                         <input type="submit" value="수정" class="btn-link">
                     </form>
-                    <form action="/bookmarkDelete" method="post">
-                        <input type="hidden" id="id_Deletion" name="id_Deletion" value="${dto.name}">
+                    <form action="/bookmarkGroupDelete" method="post">
+                        <input type="hidden" id="id_Deletion" name="id_Deletion" value="${dto.id}">
                         <input type="submit" value="삭제" class="btn-link">
                     </form>
                 </td>

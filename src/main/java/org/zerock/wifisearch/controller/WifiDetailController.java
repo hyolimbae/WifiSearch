@@ -1,5 +1,6 @@
 package org.zerock.wifisearch.controller;
 
+import org.zerock.wifisearch.dto.BookmarkDTO;
 import org.zerock.wifisearch.dto.WifiDTO;
 import org.zerock.wifisearch.service.WifiService;
 
@@ -8,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.UnsupportedEncodingException;
+import java.util.List;
 
 @WebServlet(name= "WifiDetailController", urlPatterns = "/detail")
 public class WifiDetailController extends HttpServlet
@@ -41,6 +43,10 @@ public class WifiDetailController extends HttpServlet
                 .build();
         try {
             req.setAttribute("dto",dto);
+
+            // 북마크 리스트
+            List<BookmarkDTO> bookmarkDTOList = wifiService.GetBookmarkList();
+            req.setAttribute("bookmarkList",bookmarkDTOList);
             req.getRequestDispatcher("/WEB-INF/detail.jsp").forward(req,resp);
 
         } catch (Exception e) {

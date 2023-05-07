@@ -18,4 +18,6 @@ public class BookmarkVO
     private long priority;
     private LocalDateTime registerTime;
     private LocalDateTime modifiedTime;
+    private String wifiName;
+    private LocalDateTime wifiRegisteredTime;
 }

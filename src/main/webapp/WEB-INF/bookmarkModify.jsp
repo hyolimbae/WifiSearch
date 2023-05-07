@@ -44,7 +44,7 @@
 <label>|</label>
 <a href="/load" >Open API 와이파이 정보 가져오기</a>
 <label>|</label>
-<a href="/bookmark" >북마크 보기</a>
+<a href="/bookmarkList" >북마크 보기</a>
 <label>|</label>
 <a href="/manage" >북마크 그룹 관리</a>
 

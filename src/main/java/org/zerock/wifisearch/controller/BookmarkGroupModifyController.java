@@ -3,21 +3,19 @@ package org.zerock.wifisearch.controller;
 import org.zerock.wifisearch.dto.BookmarkDTO;
 import org.zerock.wifisearch.service.WifiService;
 
-import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
 
-@WebServlet(name= "BookmarkModifyController", urlPatterns = "/bookmarkModify")
-public class BookmarkModifyController extends HttpServlet
+@WebServlet(name= "BookmarkGroupModifyController", urlPatterns = "/bookmarkGroupModify")
+public class BookmarkGroupModifyController extends HttpServlet
 {
     private WifiService wifiService = WifiService.INSTANCE;
 
     /* 수정/삭제로 왔을 때 */
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp)
     {
         try
         {

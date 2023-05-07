@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.util.List;
 
 @WebServlet(name= "BookmarkGroupAddController", urlPatterns = "/manage")
-public class BookmarkGroupController extends HttpServlet
+public class BookmarkGroupAddController extends HttpServlet
 {
     private WifiService wifiService = WifiService.INSTANCE;
 
@@ -42,6 +42,15 @@ public class BookmarkGroupController extends HttpServlet
     {
         try {
             List<BookmarkDTO> dtoList = wifiService.GetBookmarkList();
+
+            for (BookmarkDTO dto : dtoList)
+            {
+                if (dto.getRegisterTime().isEqual(dto.getModifiedTime()))
+                {
+                    dto.setModifiedTime(null);
+                }
+            }
+
             req.setAttribute("dtoList",dtoList);
             req.getRequestDispatcher("/WEB-INF/manage.jsp").forward(req,resp);
         } catch (Exception e) {

@@ -94,4 +94,8 @@ public enum WifiService
     public void ModifyBookmark(BookmarkDTO dto) throws Exception {
         bookmarkDAO.Modify(modelMapper.map(dto,BookmarkVO.class));
     }
+
+    public void ModifyBookmarkWifiName(BookmarkDTO dto) throws Exception {
+        bookmarkDAO.ModifyBookmarkWifiName(modelMapper.map(dto,BookmarkVO.class));
+    }
 }
