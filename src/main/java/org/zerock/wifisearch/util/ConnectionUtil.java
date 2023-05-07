@@ -11,6 +11,7 @@ public enum ConnectionUtil {
     private HikariDataSource wifiDS;
     private HikariDataSource historyDS;
 
+    private HikariDataSource bookmarkDS;
 
     ConnectionUtil()
     {
@@ -35,14 +36,28 @@ public enum ConnectionUtil {
         config2.addDataSourceProperty("prepStmtCacheSqlLimit","2048");
 
         historyDS = new HikariDataSource(config2);
+
+        HikariConfig config3 = new HikariConfig();
+        config3.setDriverClassName("org.mariadb.jdbc.Driver");
+        config3.setJdbcUrl("jdbc:mariadb://localhost:3306/webdb3");
+        config3.setUsername("webuser");
+        config3.setPassword("webuser");
+        config3.addDataSourceProperty("cachePrepStmts","true");
+        config3.addDataSourceProperty("prepStmtCacheSize","250");
+        config3.addDataSourceProperty("prepStmtCacheSqlLimit","2048");
+
+        bookmarkDS = new HikariDataSource(config3);
     }
 
     public Connection getConnection() throws Exception {
         return wifiDS.getConnection();
     }
 
-    public Connection getHistoryConnection() throws Exception
-    {
+    public Connection getHistoryConnection() throws Exception {
         return historyDS.getConnection();
+    }
+
+    public Connection getBookmarkConnection() throws Exception {
+        return bookmarkDS.getConnection();
     }
 }

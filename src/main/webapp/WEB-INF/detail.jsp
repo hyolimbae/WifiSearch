@@ -34,8 +34,6 @@
             display : block;
             float: left;
         }
-
-
     </style>
 </head>
 <body>
@@ -46,9 +44,19 @@
 <label>|</label>
 <a href="/load" >Open API 와이파이 정보 가져오기</a>
 <label>|</label>
-<a href="/bookmark" >즐겨 찾기 보기</a>
+<a href="/bookmark" >북마크 보기</a>
 <label>|</label>
-<a href="/manage" >즐겨 찾기 그룹 관리</a>
+<a href="/manage" >북마크 그룹 관리</a>
+
+<form action="/bookmarkGroup">
+    <select name="bookmarks" id="bookmark">
+    <c:forEach items = "${bookmarklist}" var = "bookmarkdto">
+    <option> ${bookmarkdto.name} </option>
+    </select>
+    </c:forEach>
+
+    <input type="submit" value="북마크 추가하기"/>
+</form>
 
 <div>
     <table border = 1px>

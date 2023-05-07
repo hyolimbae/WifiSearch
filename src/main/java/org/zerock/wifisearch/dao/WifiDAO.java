@@ -64,8 +64,8 @@ public class WifiDAO
                 preparedStatement.setString(11, mainDTO.getTbPublicWifiInfo().getRow().get(i).getX_SWIFI_CNSTC_YEAR());
                 preparedStatement.setString(12, mainDTO.getTbPublicWifiInfo().getRow().get(i).getX_SWIFI_INOUT_DOOR());
                 preparedStatement.setString(13, mainDTO.getTbPublicWifiInfo().getRow().get(i).getX_SWIFI_REMARS3());
-                preparedStatement.setDouble(14, mainDTO.getTbPublicWifiInfo().getRow().get(i).getLAT());    // LAT <-> LON 바꿔서 들어오고 있으므로
-                preparedStatement.setDouble(15, mainDTO.getTbPublicWifiInfo().getRow().get(i).getLNT());
+                preparedStatement.setDouble(14, mainDTO.getTbPublicWifiInfo().getRow().get(i).getLNT());    // LAT <-> LON 바꿔서 들어오고 있으므로
+                preparedStatement.setDouble(15, mainDTO.getTbPublicWifiInfo().getRow().get(i).getLAT());
                 preparedStatement.setString(16, mainDTO.getTbPublicWifiInfo().getRow().get(i).getWORK_DTTM());
                 preparedStatement.executeUpdate();
 
@@ -96,7 +96,7 @@ public class WifiDAO
                 "+ cos(radians(" + latitude + ")) * cos(radians(lat)) * cos(radians(lnt) - radians(" + longitude + ")))) " +
                 ", 4) as distance " +
                 " from tbl_wifi " +
-                " order by distance , X_SWIFI_MGR_NO" +
+                " order by distance" +
                 " limit 20";
 
         @Cleanup Connection connection = ConnectionUtil.INSTANCE.getConnection();

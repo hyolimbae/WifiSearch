@@ -1,19 +1,13 @@
 package org.zerock.wifisearch.controller;
 
-import org.zerock.wifisearch.domain.HistoryVO;
-import org.zerock.wifisearch.dto.HistoryDTO;
 import org.zerock.wifisearch.dto.WifiDTO;
 import org.zerock.wifisearch.service.WifiService;
 
-import javax.servlet.RequestDispatcher;
-import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
 import java.io.UnsupportedEncodingException;
-import java.util.List;
 
 @WebServlet(name= "WifiDetailController", urlPatterns = "/detail")
 public class WifiDetailController extends HttpServlet
@@ -45,8 +39,6 @@ public class WifiDetailController extends HttpServlet
                 .lnt(Double.parseDouble(req.getParameter("lnt")))
                 .work_DTTM(req.getParameter("work_DTTM"))
                 .build();
-
-
         try {
             req.setAttribute("dto",dto);
             req.getRequestDispatcher("/WEB-INF/detail.jsp").forward(req,resp);
